@@ -9,8 +9,26 @@
     <title>Django Architecture Page</title>
 </head>
 <body>
-	<h1>Hi, this is the Django REST Architecture</h1>
-	<img src="{% static "images/DjangoArch.png" %}" alt="Djnago Architecture">
-    <!-- {{ insert_me }} -->
+	<h1>Hi, These are access Records</h1>
+	<!-- <img src="{% static "images/DjangoArch.png" %}" alt="Djnago Architecture"> -->
+	<!-- {{ insert_me }} -->
+	<div class="djangtwo">
+		{% if access_records %}
+		<table>
+			<thead>
+				<th>Site Name</th>
+				<th>Date Accessed</th>
+			</thead>
+			{% for acc in access_records %}
+			<tr>
+				<td>{{ acc.name}}</td>
+				<td>{{ acc.date}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% else %}
+		<p>No records found!</p>
+		{% endif %}
+	</div>
 </body>
 </html>
