@@ -25,11 +25,6 @@ def user_signup(request):
 			form.save(commit=True)
 			# render Home Page
 			return index(request)
-			# print("Validation success!")
-			# first_name = form.cleaned_data['first_name']
-			# last_name = form.cleaned_data['last_name']
-			# email = form.cleaned_data['email']
-			# print(f'first name: {first_name}, last_name: {last_name}, email: {email}')
 		else:
 			print('ERROR, FORM INVALID.')
 	return render(request, 'AppTwo/Users/signup.html',{'form': form})
